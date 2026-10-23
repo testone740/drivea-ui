@@ -1,5 +1,5 @@
 import { Toaster } from 'react-hot-toast';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router';
 import { Login } from '@/pages/Login';
 import { Drive } from '@/pages/Drive';
 

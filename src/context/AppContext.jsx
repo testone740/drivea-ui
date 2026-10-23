@@ -22,10 +22,12 @@ export const AppProvider = ({ children }) => {
     try {
       const { data } = await requestFn();
 
+      // console.log('data', data);
+
       setUser(data.user);
 
       if (successMsg) {
-        toast.success(successMsg);
+        toast.success(successMsg, { duration: 3000, position: 'top-center' });
       }
 
       return true;
@@ -36,14 +38,29 @@ export const AppProvider = ({ children }) => {
   };
 
   const login = (email, password) => {
+    const userValue = localStorage.getItem(email);
+
+    if (!userValue) {
+      toast.error('Account not found');
+      return false;
+    }
+
     return authAction(
       () => api.post('/api/auth/login', { email, password }),
-      'Welcome back!',
+      `Welcome back, ${userValue}!`,
       'Login failed',
     );
   };
 
   const register = (name, email, password) => {
+    const userEmail = localStorage.getItem(email);
+    if (userEmail) {
+      toast.success('Account exists');
+      return false;
+    }
+
+    localStorage.setItem(email, name);
+
     return authAction(
       () => api.post('/api/auth/register', { name, email, password }),
       'Account created successfully!',

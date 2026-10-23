@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 import { Input } from '@/components/ui/Input';
 import { LockIcon, MailIcon, UserIcon } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
