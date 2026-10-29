@@ -1,7 +1,3 @@
-import React from 'react';
-
-const SharedWithMe = () => {
+export const SharedWithMe = () => {
   return <div>SharedWithMe</div>;
 };
-
-export default SharedWithMe;

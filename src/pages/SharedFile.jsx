@@ -1,7 +1,5 @@
 import React from 'react';
 
-const SharedFile = () => {
+export const SharedFile = () => {
   return <div>SharedFile</div>;
 };
-
-export default SharedFile;
