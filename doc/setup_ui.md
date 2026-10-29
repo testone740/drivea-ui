@@ -1,32 +1,38 @@
-## Project Setup
+## Frontend Project
 
-### Install packages
+### Chapter 1: Basic Vite && React App
 
-```sh
-npm install axios date-fns lucide-react react-dropzone react-hot-toast react-router
+- Create project and install packages: https://youtu.be/3X__DaWC3mY?t=450
+- Install `TailwindCSS`: https://tailwindcss.com/docs/installation/using-vite
+- Commands:
 
-https://tailwindcss.com/docs/installation/using-vite
-npm install tailwindcss @tailwindcss/vite
-```
+  ```sh
+  npm install axios date-fns lucide-react react-dropzone react-hot-toast react-router tailwindcss @tailwindcss/vite
+  ```
 
-https://youtu.be/3X__DaWC3mY?t=1059
+  Note: `react-router-dom` is replaced with `react-router`
 
-### Login Page
+### Chapter 2: Login and Register Page
 
-https://youtu.be/3X__DaWC3mY?t=2219
+- Setup pages and public routes: https://youtu.be/3X__DaWC3mY?t=1593
+- Login page with form for signin and register: https://youtu.be/3X__DaWC3mY?t=2215
+- App context (global state management): https://youtu.be/3X__DaWC3mY?t=3500
 
-### AppContext
+### Chapter 3: Protected Routes, Dashboard Layout, Sidebar, Header
 
-https://youtu.be/3X__DaWC3mY?t=3546
+- Protected routes: https://youtu.be/3X__DaWC3mY?t=4705
+- Dashboard layout for sidebar and main outlet: https://youtu.be/3X__DaWC3mY?t=5426
+  - Add more functions to app context
+- Sidebar with logo header, upload CTA button, nav links: https://youtu.be/3X__DaWC3mY?t=6350
+- Header with search bar, sort dropdown menu, user avatar menu: https://youtu.be/3X__DaWC3mY?t=7875
 
-### Drive Page
+## Chapter 4: Drive Detail Page
 
-https://youtu.be/3X__DaWC3mY?t=4781
+- Hook `useDrive`: https://youtu.be/3X__DaWC3mY?t=9091
+- Drive Detail Page: https://youtu.be/3X__DaWC3mY?t=10625
+  - Breadcrumbs: https://youtu.be/3X__DaWC3mY?t=10720
+  - Folder and File sections with grid: https://youtu.be/3X__DaWC3mY?t=11135
 
-### Sidebar && Protected Routes
+## Chapter 5: File/Folder Preview, Share, Rename, Move, Delete
 
-https://youtu.be/3X__DaWC3mY?t=6354
-
-### Header
-
-https://youtu.be/3X__DaWC3mY?t=7874
+- https://youtu.be/3X__DaWC3mY?t=13340

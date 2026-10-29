@@ -12,10 +12,13 @@ import { useApp } from '@/context/AppContext';
 import { Dropdown, DropdownItem } from '../ui/Dropdown';
 import { ProgressBar } from '../ui/ProgressBar';
 import { formatBytes } from '@/assets/assets';
+import { useDrive } from '@/hooks/useDrive';
 
 // https://youtu.be/3X__DaWC3mY?t=6354
 
 export const Sidebar = ({ onCreateFolderClick, isMobileOpen, setIsMobileOpen }) => {
+  const { isUploading, uploadFiles } = useDrive();
+
   const { user, currentFolderId } = useApp();
   const location = useLocation();
   const fileInputRef = useRef(null);
@@ -24,13 +27,18 @@ export const Sidebar = ({ onCreateFolderClick, isMobileOpen, setIsMobileOpen }) 
   const storage_limit = Number(user?.storage_limit ?? 1073741824); // 1GB
   const used_percentage = Math.min(Math.round((storage_used / storage_limit) * 100));
 
+  const handleFileSelect = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      uploadFiles(e.target.files, currentFolderId);
+      e.target.value = '';
+    }
+  };
+
   const navItems = [
     { label: 'My Drive', path: '/', icon: HardDriveIcon },
     { label: 'Shared Drive', path: '/shared', icon: UsersIcon },
     { label: 'Trash', path: '/trash', icon: Trash2Icon },
   ];
-
-  const isUploading = false;
 
   return (
     <>
@@ -58,7 +66,13 @@ export const Sidebar = ({ onCreateFolderClick, isMobileOpen, setIsMobileOpen }) 
 
         {/* Upload CTA Dropdown: https://youtu.be/3X__DaWC3mY?t=6935 */}
         <div className="p-4">
-          <input type="file" ref={fileInputRef} multiple className="hidden" />
+          <input
+            type="file"
+            ref={fileInputRef}
+            multiple
+            className="hidden"
+            onChange={handleFileSelect}
+          />
           <Dropdown
             trigger={
               <button
