@@ -35,4 +35,10 @@
 
 ## Chapter 5: File/Folder Preview, Share, Rename, Move, Delete
 
-- https://youtu.be/3X__DaWC3mY?t=13340
+- Preview: https://youtu.be/3X__DaWC3mY?t=13340
+- Share: https://youtu.be/3X__DaWC3mY?t=14625
+- Rename: https://youtu.be/3X__DaWC3mY?t=16190
+- Move: https://youtu.be/3X__DaWC3mY?t=16860
+- Delete: https://youtu.be/3X__DaWC3mY?t=17745
+- Shared Links: https://youtu.be/3X__DaWC3mY?t=18015
+- Share With Me: https://youtu.be/3X__DaWC3mY?t=19675

@@ -83,20 +83,20 @@ export const useDrive = () => {
 
   const renameItem = (item, newName) => {
     const isFolder = isFolderItem(item);
-    const endpoint = IsFolder ? 'folders' : 'files';
+    const endpoint = isFolder ? 'folders' : 'files';
     const id = item.id || item;
 
     return runAction(
       api.patch(`/api/${endpoint}/${id}/rename`, { name: newName }),
       `${isFolder ? 'Folder' : 'File'} renamed.`,
-      'Error renaming item.',
+      // 'Error renaming item.',
       () => fetchDriveContent()
     );
   };
 
   const moveItem = (item, targetFolderid) => {
     const isFolder = isFolderItem(item);
-    const endpoint = IsFolder ? 'folders' : 'files';
+    const endpoint = isFolder ? 'folders' : 'files';
     const payload = isFolder
       ? { target_parent: targetFolderid }
       : { target_folder: targetFolderid };
@@ -104,19 +104,19 @@ export const useDrive = () => {
     return runAction(
       api.patch(`/api/${endpoint}/${id}/move`, payload),
       `${isFolder ? 'Folder' : 'File'} moved.`,
-      'Error moving item.',
+      // 'Error moving item.',
       () => fetchDriveContent()
     );
   };
 
   const deleteItem = (item) => {
     const isFolder = isFolderItem(item);
-    const endpoint = IsFolder ? 'folders' : 'files';
+    const endpoint = isFolder ? 'folders' : 'files';
     const id = item.id || item;
     return runAction(
       api.delete(`/api/${endpoint}/${id}`),
       `${isFolder ? 'Folder' : 'File'} moved to Trash.`,
-      'Error deleting item.',
+      // 'Error deleting item.',
       () => fetchDriveContent()
     );
   };
