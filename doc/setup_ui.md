@@ -42,3 +42,8 @@
 - Delete: https://youtu.be/3X__DaWC3mY?t=17745
 - Shared Links: https://youtu.be/3X__DaWC3mY?t=18015
 - Share With Me: https://youtu.be/3X__DaWC3mY?t=19675
+
+## Chapter 5: Trash Page, New Item
+
+- Trash: https://youtu.be/3X__DaWC3mY?t=22060
+- New Item: https://youtu.be/3X__DaWC3mY?t=24120

@@ -15,7 +15,7 @@ export const useDrive = () => {
     setIsUploading,
     uploadProgress,
     setUploadProgress,
-  } = useApp;
+  } = useApp();
 
   // Reusable API action runner with standard toas & callback
   const runAction = async (apiCall, successMsg, errorMsg, afterSuccess) => {
@@ -75,7 +75,7 @@ export const useDrive = () => {
     runAction(
       api.post('/api/folders', { name, parent_id }),
       'Folder created.',
-      'Error creating folder.',
+      // 'Error creating folder.',
       () => fetchDriveContent(parent_id)
     );
 
@@ -137,7 +137,6 @@ export const useDrive = () => {
     return runAction(
       api.delete(`/api/${endpoint}/${id}/permanent`),
       `Item pernmanently deleted.`,
-      'Error deleting item.',
       () => refreshUser()
     );
   };
