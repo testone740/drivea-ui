@@ -84,11 +84,11 @@ export const AppProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await api.post('/api/auth/register');
+      await api.post('/api/auth/logout');
       setUser(null);
       toast.success('Logged out');
     } catch (err) {
-      toast.success('Logged error');
+      toast.error('Error logging out');
     }
   };
 
